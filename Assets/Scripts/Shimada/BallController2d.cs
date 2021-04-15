@@ -8,9 +8,7 @@ public class BallController2d : MonoBehaviour
     [SerializeField] GameObject m_selectBall = null;
 
     Rigidbody2D m_rb;
-    public bool m_isSelect = false;
-
-    bool m_isSelectedBall = false;//縁取り用のボールが子オブジェクトとしてあるかどうか
+    public bool m_isSelect { get; private set; }
 
     // Start is called before the first frame update
     void Start()
@@ -20,32 +18,19 @@ public class BallController2d : MonoBehaviour
         m_rb.AddForce(new Vector2(random, 0) * m_pushPower, ForceMode2D.Impulse);
     }
 
-    void Update()
+    /// <summary>ボールを選択状態にする</summary>
+    public void SelectBall()
     {
-        if (m_isSelect)
-        {
-            m_isSelectedBall = true;
-            Vector2 pos = transform.position;
-            Quaternion rotat = transform.rotation;
-            Instantiate(m_selectBall, pos, rotat, transform);
-        }
-        else
-        {
-            if (m_isSelectedBall)
-            {
-                Destroy(m_selectBall);
-                m_isSelectedBall = false;
-            }
-        }
+        m_isSelect = true;
+        Vector2 pos = transform.position;
+        Quaternion rotat = transform.rotation;
+        Instantiate(m_selectBall, pos, rotat, transform);
     }
 
-    void OnLuminous()
+    /// <summary>ボールを選択状態から解除する</summary>
+    public void UnSelectBall()
     {
-
-    }
-
-    void UnKuminous()
-    {
-
+        m_isSelect = false; 
+        //Destroy(m_selectBall);
     }
 }
