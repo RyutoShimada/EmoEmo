@@ -16,6 +16,7 @@ public class BallController2d : MonoBehaviour
         float random = Random.Range(-1f, 1f);
         m_rb = GetComponent<Rigidbody2D>();
         m_rb.AddForce(new Vector2(random, 0) * m_pushPower, ForceMode2D.Impulse);
+
         Vector2 pos = transform.position;
         Quaternion rotat = transform.rotation;
         m_gm = Instantiate(m_selectBall, pos, rotat, transform);
@@ -27,7 +28,6 @@ public class BallController2d : MonoBehaviour
     {
         m_isSelect = true;
         m_gm.SetActive(true);
-        //Debug.Log(m_selectBall.name);
     }
 
     /// <summary>ボールを選択状態から解除する</summary>
