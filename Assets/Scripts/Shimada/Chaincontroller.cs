@@ -24,7 +24,7 @@ public class Chaincontroller : MonoBehaviour
         m_rayOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         m_hit = Physics2D.Raycast(m_rayOrigin, Vector3.forward, 100f);
         GetMouseButton();
-        Debug.Log(m_ballList.Count);
+        //Debug.Log(m_ballList.Count);
     }
 
     void GetMouseButton()
@@ -84,7 +84,14 @@ public class Chaincontroller : MonoBehaviour
                 foreach (var item in m_ballList)
                 {
                     item.gameObject.GetComponent<BallController2d>().UnSelectBall();
-                    Destroy(item, 0.1f);
+                    item.SetActive(false);
+                }
+            }
+            else if (m_ballList.Count < 3)
+            {
+                foreach (var item in m_ballList)
+                {
+                    item.gameObject.GetComponent<BallController2d>().UnSelectBall();
                 }
             }
 
