@@ -4,28 +4,25 @@ using UnityEngine;
 
 public class EmoteGenerator : MonoBehaviour
 {
-    [SerializeField] Transform[] m_muzzle;
     [SerializeField] GameObject[] m_emote;
-    int randomMuzzle;
+    float randomMuzzle;
     int randomEmote;
+    float m_timer = 0.0f;
+    float m_interval = 1.0f;
 
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
-        randomMuzzle = Random.Range(0, m_muzzle.Length);
         randomEmote = Random.Range(0, m_emote.Length);
 
-        StartCoroutine(GenerateEmote());
-    }
+        m_timer += Time.deltaTime;
 
-    IEnumerator GenerateEmote()
-    {
-        yield return new WaitForSeconds(0.5f);
-
-        Instantiate(m_emote[randomEmote], m_muzzle[randomMuzzle].position, m_muzzle[randomMuzzle].rotation);
+        if (m_timer >= m_interval)
+        {
+            m_timer = 0.0f;
+            GameObject e = Instantiate(m_emote[randomEmote]);
+            randomMuzzle = Random.Range(-1.0f, 1.0f);
+            e.transform.position = new Vector3(randomMuzzle, 3, 3);
+        }
     }
 }
