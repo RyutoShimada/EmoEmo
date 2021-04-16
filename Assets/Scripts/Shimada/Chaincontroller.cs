@@ -64,7 +64,7 @@ public class Chaincontroller : MonoBehaviour
                 else
                 {
                     //最後に追加したボールと現在選択しているボールが異なるオブジェクトならリストに追加する
-                    if (m_hit.collider.gameObject != m_ballList.Last().gameObject)
+                    if (m_hit.collider.gameObject != m_ballList.Last().gameObject && m_hit.collider.gameObject.name == m_ballList.First().gameObject.name)
                     {
                         m_ballList.Add(m_hit.collider.gameObject);
                     }

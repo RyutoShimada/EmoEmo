@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5888484608648893710}
   - component: {fileID: 5888484608648893707}
   - component: {fileID: -346596365983620038}
+  - component: {fileID: -6941935522703065306}
   m_Layer: 0
   m_Name: GreenBall2D
   m_TagString: Ball
@@ -112,7 +113,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -136,3 +137,19 @@ MonoBehaviour:
   m_pushPower: 1
   m_selectBall: {fileID: 414718930624515456, guid: 9b8b9cb450d73424cad7b72dca6d9a43,
     type: 3}
+--- !u!58 &-6941935522703065306
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5888484608648893711}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: a97188892268633458fe09bc1b3440dc, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1

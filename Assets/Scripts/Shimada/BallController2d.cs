@@ -16,10 +16,13 @@ public class BallController2d : MonoBehaviour
         float random = Random.Range(-1f, 1f);
         m_rb = GetComponent<Rigidbody2D>();
         m_rb.AddForce(new Vector2(random, 0) * m_pushPower, ForceMode2D.Impulse);
+
         Vector2 pos = transform.position;
         Quaternion rotat = transform.rotation;
         m_gm = Instantiate(m_selectBall, pos, rotat, transform);
         m_gm.SetActive(false);
+
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
     }
 
     /// <summary>ボールを選択状態にする</summary>
@@ -35,5 +38,13 @@ public class BallController2d : MonoBehaviour
     {
         m_isSelect = false;
         m_gm.SetActive(false);
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == this.tag)
+        {
+
+        }
     }
 }
