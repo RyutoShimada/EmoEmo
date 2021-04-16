@@ -80,7 +80,7 @@ public class BallCounter : MonoBehaviour
         if (m_clonePosA && m_clonePosB)
         {
             float clonePosX = Random.Range(m_clonePosA.transform.position.x, m_clonePosB.transform.position.x);
-            Debug.Log(clonePosX);
+            //Debug.Log(clonePosX);
             activeBall.gameObject.transform.position = new Vector2(clonePosX, this.transform.position.y);
         }
         else activeBall.gameObject.transform.position = this.transform.position;
