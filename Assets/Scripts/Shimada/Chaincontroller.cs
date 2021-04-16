@@ -24,36 +24,51 @@ public class Chaincontroller : MonoBehaviour
         m_rayOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         m_hit = Physics2D.Raycast(m_rayOrigin, Vector3.forward, 100f);
         GetMouseButton();
+        Debug.Log(m_ballList.Count);
     }
 
     void GetMouseButton()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (m_hit && m_hit.collider.tag == "Ball")
-            {
-                if (m_hit.collider.gameObject != m_ballList.Last().gameObject)//最初の時だとLISTに何も入ってないからエラーになる
-                {
-                    m_ballList.Add(m_hit.collider.gameObject);
-                }
-                
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    if (m_hit && m_hit.collider.tag == "Ball")
+        //    {
+        //        if (m_ballList.Count == 0)
+        //        {
+        //            m_ballList.Add(m_hit.collider.gameObject);
+        //        }
+        //        else
+        //        {
+        //            //最後に追加したボールと現在選択しているボールが異なるオブジェクトならリストに追加する
+        //            if (m_hit.collider.gameObject != m_ballList.Last().gameObject)
+        //            {
+        //                m_ballList.Add(m_hit.collider.gameObject);
+        //            }
+        //        }
 
-                foreach (var item in m_ballList)
-                {
-                    item.gameObject.GetComponent<BallController2d>().SelectBall();
-                }
-            }
-        }
+        //        foreach (var item in m_ballList)
+        //        {
+        //            item.gameObject.GetComponent<BallController2d>().SelectBall();
+        //        }
+        //    }
+        //}
 
         if (Input.GetMouseButton(0))
         {
             if (m_hit && m_hit.collider.tag == "Ball")
             {
-                if (m_hit.collider.gameObject != m_ballList.Last().gameObject)
+                if (m_ballList.Count == 0)
                 {
                     m_ballList.Add(m_hit.collider.gameObject);
                 }
-
+                else
+                {
+                    //最後に追加したボールと現在選択しているボールが異なるオブジェクトならリストに追加する
+                    if (m_hit.collider.gameObject != m_ballList.Last().gameObject)
+                    {
+                        m_ballList.Add(m_hit.collider.gameObject);
+                    }
+                }
 
                 foreach (var item in m_ballList)
                 {
