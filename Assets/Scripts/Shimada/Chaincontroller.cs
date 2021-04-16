@@ -48,40 +48,27 @@ public class Chaincontroller : MonoBehaviour
                     float distance = Vector2.Distance(hitObj.transform.position, listLastObj.transform.position);
                     float diameter = hitObj.GetComponent<Renderer>().bounds.size.x + m_margin;
 
-                    //①最初のオブジェクトと選択しているオブジェクトが異なる
-                    //②最後に追加したオブジェクトと選択しているオブジェクトが異なる
-                    //③それらのオブジェクトが隣接している
-                    //④そのオブジェクト同士の名前が同じ
-                    //(⑤選択しているオブジェクトと最後から2番目のオブジェクトが異なる)
+                    //①既に選択されていない
+                    //②それらのオブジェクトが隣接している
+                    //③そのオブジェクト同士の名前が同じ
                     //ならリストに追加する
 
-                    if (m_ballList.Count == 1)
+                    if (!hitObj.GetComponent<BallController2d>().m_isSelect &&//①
+                        distance <= diameter &&//②
+                        hitObj.name == listLastObj.name)//③
                     {
-                        if (hitObj != listFirstObj &&//①
-                            hitObj != listLastObj &&//②
-                            distance <= diameter &&//③
-                            hitObj.name == listLastObj.name)//④
-                        {
-                            m_ballList.Add(m_hit.collider.gameObject);
-                        }
+                        m_ballList.Add(m_hit.collider.gameObject);
                     }
-                    else
-                    {
-                        if (hitObj != listFirstObj &&//①
-                            hitObj != listLastObj &&//②
-                            hitObj != m_ballList[m_ballList.Count - 2] &&//⑤
-                            distance <= diameter &&//③
-                            hitObj.name == listLastObj.name)//④
-                        {
-                            m_ballList.Add(m_hit.collider.gameObject);
-                        }
-                    }
-                    
 
                     if (m_ballList.Count > 1 && hitObj == m_ballList[m_ballList.Count - 2])
                     {
                         listLastObj.gameObject.GetComponent<BallController2d>().UnSelectBall();
                         m_ballList.RemoveAt(m_ballList.Count - 1);
+                    }
+
+                    if (hitObj.GetComponent<BallController2d>().m_isSelect)
+                    {
+
                     }
                 }
 
@@ -117,11 +104,11 @@ public class Chaincontroller : MonoBehaviour
     /// <summary>
     /// 既に選択されているボールに戻ったときに、最後に選択したボールをListから消す
     /// </summary>
-    void SelectBuck(GameObject hitObj, List<GameObject> list)
+    void SelectBuck(int count, GameObject hitObj, List<GameObject> list)
     {
-        if (hitObj == list[list.Count - 1])
+        for (int i = 0; i < count; i++)
         {
-            
+
         }
     }
 }
