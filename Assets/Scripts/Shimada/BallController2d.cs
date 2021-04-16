@@ -21,8 +21,6 @@ public class BallController2d : MonoBehaviour
         Quaternion rotat = transform.rotation;
         m_gm = Instantiate(m_selectBall, pos, rotat, transform);
         m_gm.SetActive(false);
-
-        gameObject.GetComponent<CircleCollider2D>().enabled = false;
     }
 
     /// <summary>ボールを選択状態にする</summary>
@@ -30,7 +28,6 @@ public class BallController2d : MonoBehaviour
     {
         m_isSelect = true;
         m_gm.SetActive(true);
-        //Debug.Log(m_selectBall.name);
     }
 
     /// <summary>ボールを選択状態から解除する</summary>
@@ -38,13 +35,5 @@ public class BallController2d : MonoBehaviour
     {
         m_isSelect = false;
         m_gm.SetActive(false);
-    }
-
-    void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == this.tag)
-        {
-
-        }
     }
 }
