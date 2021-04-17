@@ -1,42 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
 public class messagecontroller : MonoBehaviour
 {
-    Vector3 m_initialPosition;
-    [SerializeField] Transform m_target = null;
+    List<GameObject> tagObjects;
 
-    [SerializeField] Transform m_EndPosition = null;
+    [SerializeField] GameObject message;
 
-    [SerializeField] float m_speed = 0.5f;
+    [SerializeField] Transform generatePosition;
+
+    int currentCount = 0;
 
     void Start()
     {
-       
-        //m_initialPosition = this.transform.position;
-        Scrolling();
+        tagObjects = new List<GameObject>();
     }
 
-    private void Update()
+
+
+    public void Generate()
     {
-        
-        Destroy(this.gameObject, 6f);
+        Debug.Log(tagObjects);
+        tagObjects.Add(message);
+        currentCount++;
+        Instantiate(tagObjects[currentCount - 1], generatePosition, generatePosition);
+        if (currentCount > 4)
+        {
+            tagObjects.RemoveAt(tagObjects.Count - 1);
+            currentCount--;
+            //Destroy(tagObjects[tagObjects.Count - 1]);
+        }
     }
-
-    void Scrolling() 
-    {
-        Sequence seq = DOTween.Sequence();
-        seq.Append(this.transform.DOMove(m_target.position, 1f))
-            .AppendInterval(2)
-            .Append(this.transform.DOMove(m_EndPosition.position, 3f))
-            .AppendInterval(3);
-        //.OnComplete(() => { };
-        seq.Play();
-
-
-
-    }
-
 }
