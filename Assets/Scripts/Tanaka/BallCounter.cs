@@ -26,18 +26,28 @@ public class BallCounter : MonoBehaviour
     /// <summary>ボールのリスト</summary>
     List<BallController2d> m_childBalls = new List<BallController2d>();
     /// <summary>一回目か否か</summary>
-    public bool m_IsFirstTime { get; set; }
+    bool m_IsFirstTime;
 
     private void Start()
     {
         m_IsFirstTime = true;
+
+        //オブジェクトプール内のボールの数が、ボールの生成上限よりも少なかったら、上限数をオブジェクトプール内のボール数に代入する
+        if (m_firstBallCountAtPool < m_maxBallCount)
+        {
+            m_firstBallCountAtPool = m_maxBallCount;
+        }
+        else if (m_firstBallCountAtPool < m_firstMaxBallCount)
+        {
+            m_firstBallCountAtPool = m_firstMaxBallCount;
+        }
+
         for (int i = 0; i <= m_firstBallCountAtPool; i++)
         {
             InstantiateBall();
         }
+
         m_childBalls = GetComponentsInChildren<BallController2d>().ToList();
-        if (m_childBalls != null) { Debug.Log("get childBalls"); }
-        //m_childBalls.ForEach(ball => ball.gameObject.SetActive(false));
         ActivateBallAtFirst();
     }
 
@@ -48,6 +58,7 @@ public class BallCounter : MonoBehaviour
             if (m_childBalls.Where(ball => ball.gameObject.activeSelf == true).Count() < m_maxBallCount)
             {
                 m_timer += Time.deltaTime;
+
                 if (m_timer > m_interval)
                 {
                     m_timer = 0;
@@ -56,13 +67,14 @@ public class BallCounter : MonoBehaviour
             }
         }
     }
-#if UNITY_EDITOR
+
     public void NonActiveBall()
     {
         int skipIndex = Random.Range(0, m_childBalls.Where(ball => ball.gameObject.activeSelf == true).Count());
         BallController2d activeBall = m_childBalls.Where(ball => ball.gameObject.activeSelf == true).Skip(skipIndex).FirstOrDefault();
         activeBall.gameObject.SetActive(false);
     }
+#if UNITY_EDITOR
     public void NonActiveBallAll()
     {
         m_childBalls.Where(ball => ball.gameObject.activeSelf == true).ToList().ForEach(ball => ball.gameObject.SetActive(false));
@@ -85,8 +97,11 @@ public class BallCounter : MonoBehaviour
     /// </summary>
     void ActivateBall()
     {
+        //最大値＝chaildBalls配列の中にある非アクティブなオブジェクトの個数
         int skipIndex = Random.Range(0, m_childBalls.Where(ball => ball.gameObject.activeSelf == false).Count());
         BallController2d activeBall = m_childBalls.Where(ball => ball.gameObject.activeSelf == false).Skip(skipIndex).FirstOrDefault();
+        
+        //指定された範囲内からランダムな位置にボールを生成する
         if (m_clonePosA && m_clonePosB)
         {
             float clonePosX = Random.Range(m_clonePosA.transform.position.x, m_clonePosB.transform.position.x);
@@ -104,6 +119,5 @@ public class BallCounter : MonoBehaviour
             NonActiveBall();
         }
         m_IsFirstTime = false;
-        Debug.Log("ActivateBallAtFirst()");
     }
 }
