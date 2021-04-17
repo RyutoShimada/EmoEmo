@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573f62f10907e6f40a6e3f1ff965fa6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_margin: 1
+  m_margin: 1.3
   m_chainText: {fileID: 1387959839}
 --- !u!4 &64464453
 Transform:
@@ -202,8 +202,9 @@ MonoBehaviour:
   m_clonePosA: {fileID: 1199588063}
   m_clonePosB: {fileID: 1568738792}
   m_interval: 0.5
-  m_maxBallCount: 20
-  m_firstBallCount: 30
+  m_firstMaxBallCount: 10
+  m_maxBallCount: 50
+  m_firstBallCountAtPool: 10
 --- !u!4 &249798284
 Transform:
   m_ObjectHideFlags: 0
