@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5888484608648893707}
   - component: {fileID: -346596365983620038}
   m_Layer: 0
-  m_Name: GreenBall2D
+  m_Name: UpuBall
   m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.75
 --- !u!50 &5888484608648893707
 Rigidbody2D:
   serializedVersion: 4
