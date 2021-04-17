@@ -289,7 +289,17 @@ PrefabInstance:
     - target: {fileID: 890982276442023896, guid: e7de1234de405144c9f0b688211135db,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadTitleScene
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 890982276442023896, guid: e7de1234de405144c9f0b688211135db,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 890982276442023896, guid: e7de1234de405144c9f0b688211135db,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Title
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7de1234de405144c9f0b688211135db, type: 3}

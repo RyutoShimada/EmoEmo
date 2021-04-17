@@ -894,6 +894,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneManager
       objectReference: {fileID: 0}
+    - target: {fileID: 890982276442023896, guid: e7de1234de405144c9f0b688211135db,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 890982276442023896, guid: e7de1234de405144c9f0b688211135db,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 890982276442023896, guid: e7de1234de405144c9f0b688211135db,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Result
+      objectReference: {fileID: 0}
     - target: {fileID: 890982276442023902, guid: e7de1234de405144c9f0b688211135db,
         type: 3}
       propertyPath: m_IsActive

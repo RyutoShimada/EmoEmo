@@ -9,7 +9,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] Text m_gameTimeUI = null;
     [SerializeField] GameObject m_gameoverUI = null;
     [SerializeField] GameObject m_resultButton = null;
-    public static bool isPlayed = false;
+    public static bool isPlayed = true;
 
     void Start()
     {
