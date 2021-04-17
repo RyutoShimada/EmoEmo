@@ -202,9 +202,9 @@ MonoBehaviour:
   m_clonePosA: {fileID: 1199588063}
   m_clonePosB: {fileID: 1568738792}
   m_interval: 0.5
-  m_firstMaxBallCount: 10
+  m_firstMaxBallCount: 50
   m_maxBallCount: 50
-  m_firstBallCountAtPool: 10
+  m_firstBallCountAtPool: 50
 --- !u!4 &249798284
 Transform:
   m_ObjectHideFlags: 0
