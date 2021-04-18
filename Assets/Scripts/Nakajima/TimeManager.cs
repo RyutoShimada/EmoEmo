@@ -7,26 +7,44 @@ public class TimeManager : MonoBehaviour
 {
     [SerializeField] float m_gameTime = 120f;
     [SerializeField] Text m_gameTimeUI = null;
-    [SerializeField] GameObject m_gameoverUI = null;
+    [SerializeField] GameObject m_timeupUI = null;
     [SerializeField] GameObject m_resultButton = null;
+    [SerializeField] Animator m_anim;
     public static bool isPlayed = true;
+    
 
     void Start()
     {
-        m_gameoverUI.SetActive(false);
+        m_timeupUI.SetActive(false);
         m_resultButton.SetActive(false);
     }
 
     void Update()
     {
+        if (m_anim == null) return;
+
         if (isPlayed)
         {
             m_gameTime -= Time.deltaTime;
-            m_gameTimeUI.text = $"残り時間：{m_gameTime:F1}";
+            m_gameTimeUI.text = $"{m_gameTime:F0}";
+
+            if (m_gameTime >= 10.5f)
+            {
+                m_anim.Play("GameTime");
+            }
+            else if (m_gameTime < 10.5f && m_gameTime > 0)
+            {
+                m_anim.Play("BeforeTheEnd");
+            }
+            else if (m_gameTime <= 0)
+            {
+                m_anim.Play("GameTime");
+            }
+
             if (m_gameTime <= 0)
             {
                 isPlayed = false;
-                m_gameoverUI.SetActive(true);
+                m_timeupUI.SetActive(true);
                 StartCoroutine(DisplayButton());
             }
         }

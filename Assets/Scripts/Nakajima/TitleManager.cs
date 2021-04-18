@@ -9,7 +9,6 @@ public class TitleManager : MonoBehaviour
     [SerializeField] GameObject m_SelectMenu = null;
     [SerializeField] AudioClip m_selectSfx = null;
     [SerializeField] AudioSource m_as;
-    bool isStarted = true;
 
     void Start()
     {
@@ -19,12 +18,11 @@ public class TitleManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKeyDown && isStarted)
+        if (m_FirstText.activeSelf && Input.anyKeyDown)
         {
             m_as.PlayOneShot(m_selectSfx);
             m_FirstText.SetActive(false);
             m_SelectMenu.SetActive(true);
-            isStarted = false;
         }
     }
 }
