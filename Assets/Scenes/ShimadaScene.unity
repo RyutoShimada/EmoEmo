@@ -1031,6 +1031,21 @@ PrefabInstance:
       propertyPath: m_clonePosB
       value: 
       objectReference: {fileID: 1568738792}
+    - target: {fileID: 2502544868689245285, guid: 3855943856de3c54e8e476ec374ba389,
+        type: 3}
+      propertyPath: m_firstMaxBallCount
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502544868689245285, guid: 3855943856de3c54e8e476ec374ba389,
+        type: 3}
+      propertyPath: m_maxBallCount
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502544868689245285, guid: 3855943856de3c54e8e476ec374ba389,
+        type: 3}
+      propertyPath: m_firstBallCountAtPool
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3855943856de3c54e8e476ec374ba389, type: 3}
 --- !u!1001 &3386567428010155427
@@ -1105,5 +1120,10 @@ PrefabInstance:
       propertyPath: m_chainText
       value: 
       objectReference: {fileID: 1387959839}
+    - target: {fileID: 3386567427996498919, guid: e898da8b70a9bda4d86bfac9cde433f3,
+        type: 3}
+      propertyPath: m_lineWidth
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e898da8b70a9bda4d86bfac9cde433f3, type: 3}

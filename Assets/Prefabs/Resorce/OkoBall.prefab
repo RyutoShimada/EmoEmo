@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4008852552572312480}
   - component: {fileID: 2101760271037508241}
   - component: {fileID: 881892271246235940}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OkoBall
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.00011968613}
   serializedVersion: 2
-  m_Radius: 0.4245515
+  m_Radius: 0.36
 --- !u!50 &4008852552572312480
 Rigidbody2D:
   serializedVersion: 4

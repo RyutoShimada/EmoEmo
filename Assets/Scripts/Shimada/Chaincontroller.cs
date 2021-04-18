@@ -32,6 +32,8 @@ public class Chaincontroller : MonoBehaviour
     /// <summary>チェイン数(読み取り専用)</summary>
     public int m_chainCount { get; private set; }
 
+    [SerializeField] ScoreManager scoreManager;
+
     #if UNITY_EDITOR
     /// <summary>デバッグ用のチェインテキスト</summary>
     [SerializeField] Text m_chainText = null;
@@ -125,8 +127,13 @@ public class Chaincontroller : MonoBehaviour
                     item.gameObject.GetComponent<BallController2d>().UnSelectBall();
                     item.SetActive(false);
                 }
+                if (messagecontroller)
+                {
+                    messagecontroller.Generate(m_ballList[0]);
+                }
                 m_chainCount = m_ballList.Count;
                 m_audio.Play();
+                scoreManager.AddChains(m_chainCount);
             }
             else if (m_ballList.Count < 3)
             {
@@ -134,11 +141,6 @@ public class Chaincontroller : MonoBehaviour
                 {
                     item.gameObject.GetComponent<BallController2d>().UnSelectBall();
                 }
-            }
-
-            if (messagecontroller)
-            {
-                messagecontroller.Generate(m_ballList[0]);
             }
 
             m_ballList.Clear();
