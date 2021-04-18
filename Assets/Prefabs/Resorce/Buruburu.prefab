@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2255128247439512118}
   - component: {fileID: 3222467131311393998}
   - component: {fileID: 3222142104773016846}
-  - component: {fileID: 7030562202319430514}
   - component: {fileID: 9076204848004548389}
   - component: {fileID: 8545765013202733181}
   m_Layer: 8
@@ -39,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 109.600006, y: -4.299988}
+  m_AnchoredPosition: {x: 104.1, y: -4.299988}
   m_SizeDelta: {x: 96.63797, y: 91.31448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2255128247439512118
@@ -98,26 +97,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7030562202319430514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4096787236673266810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95759ef43843f2349ac58d3d72331883, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  niyari: {fileID: 0}
-  Buruburu: {fileID: 0}
-  kyun: {fileID: 0}
-  oko: {fileID: 0}
-  upu: {fileID: 0}
-  pien: {fileID: 0}
-  stamp: {fileID: 0}
-  generatePosition: {fileID: 0}
 --- !u!212 &9076204848004548389
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -198,7 +177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8281749352438373599
 RectTransform:
   m_ObjectHideFlags: 0
@@ -208,15 +187,15 @@ RectTransform:
   m_GameObject: {fileID: 7425746688592717317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.64, y: 1.9, z: 1}
+  m_LocalScale: {x: 0.45, y: 1.54, z: 1}
   m_Children: []
   m_Father: {fileID: 308944341078543075}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27.5, y: 2.7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 28, y: -0.9}
+  m_SizeDelta: {x: 25.4, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9084043765218262149
 CanvasRenderer:
@@ -239,20 +218,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 089fb1987d5742249b30990b0b24f005, type: 3}
+    m_Font: {fileID: 12800000, guid: fdf5fdcc40a4e0e4f8ae29f311fce493, type: 3}
     m_FontSize: 22
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -271,6 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: -1.91, y: -2.26}
+  m_EffectColor: {r: 0.105362855, g: 0.0047169924, b: 1, a: 0.46666667}
+  m_EffectDistance: {x: -0.98, y: -0.88}
   m_UseGraphicAlpha: 0
