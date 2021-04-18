@@ -229,7 +229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21459274}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4, y: -8.856011, z: 4.914605}
+  m_LocalPosition: {x: -4.6, y: -8.856011, z: 4.914605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1876437308}
@@ -325,7 +325,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u4F55\u304B\u30DC\u30BF\u30F3\u3092\u62BC\u3057\u3066\u304F\u3060\u3055\u3044"
+  m_Text: "\u4F55\u304B\u30DC\u30BF\u30F3\u3092\u62BC\u3057\u3066\u306D"
 --- !u!222 &134274797
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -768,9 +768,9 @@ MonoBehaviour:
   m_clonePosA: {fileID: 0}
   m_clonePosB: {fileID: 0}
   m_interval: 0.1
-  m_firstMaxBallCount: 130
-  m_maxBallCount: 130
-  m_firstBallCountAtPool: 130
+  m_firstMaxBallCount: 150
+  m_maxBallCount: 150
+  m_firstBallCountAtPool: 150
 --- !u!4 &654421343
 Transform:
   m_ObjectHideFlags: 0
@@ -2021,7 +2021,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069867801}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: -8.856011, z: 4.914605}
+  m_LocalPosition: {x: 3.78, y: -8.856011, z: 4.914605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1876437308}
