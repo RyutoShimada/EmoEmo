@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
@@ -45,15 +46,15 @@ public class TimeManager : MonoBehaviour
             {
                 isPlayed = false;
                 m_timeupUI.SetActive(true);
-                StartCoroutine(DisplayButton());
+                StartCoroutine(LoadResult("Result"));
             }
         }
     }
 
-    IEnumerator DisplayButton()
+    IEnumerator LoadResult(string name)
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3.0f);
 
-        m_resultButton.SetActive(true);
+        SceneManager.LoadScene(name);
     }
 }
