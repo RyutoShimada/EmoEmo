@@ -719,6 +719,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2502544868689245285, guid: 3855943856de3c54e8e476ec374ba389,
         type: 3}
+      propertyPath: m_ballPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502544868689245285, guid: 3855943856de3c54e8e476ec374ba389,
+        type: 3}
       propertyPath: m_clonePosA
       value: 
       objectReference: {fileID: 237753327}
@@ -730,17 +735,17 @@ PrefabInstance:
     - target: {fileID: 2502544868689245285, guid: 3855943856de3c54e8e476ec374ba389,
         type: 3}
       propertyPath: m_firstMaxBallCount
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2502544868689245285, guid: 3855943856de3c54e8e476ec374ba389,
         type: 3}
       propertyPath: m_maxBallCount
-      value: 30
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2502544868689245285, guid: 3855943856de3c54e8e476ec374ba389,
         type: 3}
       propertyPath: m_firstBallCountAtPool
-      value: 60
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3855943856de3c54e8e476ec374ba389, type: 3}

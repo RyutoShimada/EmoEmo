@@ -25,6 +25,7 @@ public class BallCounter : MonoBehaviour
     [SerializeField] int m_firstBallCountAtPool = 10;
     /// <summary>ボールのリスト</summary>
     List<BallController2d> m_childBalls = new List<BallController2d>();
+
     /// <summary>一回目か否か</summary>
     bool m_IsFirstTime;
 
@@ -42,7 +43,7 @@ public class BallCounter : MonoBehaviour
             m_firstBallCountAtPool = m_firstMaxBallCount;
         }
 
-        for (int i = 0; i <= m_firstBallCountAtPool; i++)
+        for (int i = 0; i < m_firstBallCountAtPool; i++)
         {
             InstantiateBall();
         }
@@ -72,6 +73,7 @@ public class BallCounter : MonoBehaviour
     {
         int skipIndex = Random.Range(0, m_childBalls.Where(ball => ball.gameObject.activeSelf == true).Count());
         BallController2d activeBall = m_childBalls.Where(ball => ball.gameObject.activeSelf == true).Skip(skipIndex).FirstOrDefault();
+
         activeBall.gameObject.SetActive(false);
     }
 #if UNITY_EDITOR
@@ -100,7 +102,8 @@ public class BallCounter : MonoBehaviour
         //最大値＝chaildBalls配列の中にある非アクティブなオブジェクトの個数
         int skipIndex = Random.Range(0, m_childBalls.Where(ball => ball.gameObject.activeSelf == false).Count());
         BallController2d activeBall = m_childBalls.Where(ball => ball.gameObject.activeSelf == false).Skip(skipIndex).FirstOrDefault();
-        
+
+
         //指定された範囲内からランダムな位置にボールを生成する
         if (m_clonePosA && m_clonePosB)
         {
