@@ -6,17 +6,36 @@ using UnityEngine.UI;
 
 public class Chaincontroller : MonoBehaviour
 {
-    [SerializeField] float m_margin = 1f;
-    [SerializeField] Text m_chainText = null;
+    /// <summary>吹き出しにチェイン数を出すために必要なスクリプト</summary>
+    [SerializeField] messagecontroller messagecontroller = null;
+    AudioSource m_audio;
+    
+    //マウス操作
     /// <summary>Rayを発射する位置</summary>
     Vector3 m_rayOrigin;
     /// <summary>Rayが当たったオブジェクトの情報が格納される</summary>
     RaycastHit2D m_hit;
+
+    //チェイン処理
+    /// <summary>消すために必要なチェイン数</summary>
+    [SerializeField] int m_needChainCount = 3;
+    /// <summary>チェイン判定に余裕を持たせる割合</summary>
+    [SerializeField] float m_margin = 0.07f;
+    /// <summary>線の太さ</summary>
+    [SerializeField] float m_lineWidth;
     /// <summary>チェーン状態のボールが入る</summary>
     List<GameObject> m_ballList;
-
+    /// <summary>チェインした時に出す線のコンポーネント</summary>
     LineRenderer m_lineRenderer;
+    /// <summary>LineRenderer出だす線の位置</summary>
     List<Vector3> m_linePosList;
+    /// <summary>チェイン数(読み取り専用)</summary>
+    public int m_chainCount { get; private set; }
+
+    #if UNITY_EDITOR
+    /// <summary>デバッグ用のチェインテキスト</summary>
+    [SerializeField] Text m_chainText = null;
+    #endif
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +43,11 @@ public class Chaincontroller : MonoBehaviour
         m_ballList = new List<GameObject>();
         m_linePosList = new List<Vector3>();
         m_lineRenderer = GetComponent<LineRenderer>();
-        m_lineRenderer.startWidth = 0.2f;
-        m_lineRenderer.endWidth = 0.2f;
         m_lineRenderer.positionCount = 0;
+        //チェインした時に出る線の太さ設定
+        m_lineRenderer.startWidth = m_lineWidth;
+        m_lineRenderer.endWidth = m_lineWidth;
+        m_audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,6 +69,7 @@ public class Chaincontroller : MonoBehaviour
                 if (m_ballList.Count == 0)//1個目のボール
                 {
                     m_ballList.Add(m_hit.collider.gameObject);
+                    m_ballList[m_ballList.Count - 1].GetComponent<BallController2d>().SelectBall();
                     m_linePosList.Add(m_hit.collider.gameObject.transform.position);
                     m_lineRenderer.positionCount++;
                 }
@@ -68,6 +90,7 @@ public class Chaincontroller : MonoBehaviour
                         hitObj.name == listLastObj.name)//③
                     {
                         m_ballList.Add(m_hit.collider.gameObject);
+                        m_ballList[m_ballList.Count - 1].GetComponent<BallController2d>().SelectBall();
 
                         //チェインの線を描く
                         m_linePosList.Add(m_hit.collider.gameObject.transform.position);
@@ -89,16 +112,12 @@ public class Chaincontroller : MonoBehaviour
                         }
                     }
                 }
-
-                foreach (var item in m_ballList)
-                {
-                    item.gameObject.GetComponent<BallController2d>().SelectBall();
-                }
             }
         }
 
         if (Input.GetMouseButtonUp(0))
         {
+            //チェイン数に応じて処理を変える
             if (m_ballList.Count >= 3)
             {
                 foreach (var item in m_ballList)
@@ -106,6 +125,8 @@ public class Chaincontroller : MonoBehaviour
                     item.gameObject.GetComponent<BallController2d>().UnSelectBall();
                     item.SetActive(false);
                 }
+                m_chainCount = m_ballList.Count;
+                m_audio.Play();
             }
             else if (m_ballList.Count < 3)
             {
@@ -115,8 +136,12 @@ public class Chaincontroller : MonoBehaviour
                 }
             }
 
-            m_ballList.Clear();
+            if (messagecontroller)
+            {
+                messagecontroller.Generate(m_ballList[0]);
+            }
 
+            m_ballList.Clear();
             //チェインの線を消す
             m_linePosList.Clear();
             m_lineRenderer.positionCount = 0;

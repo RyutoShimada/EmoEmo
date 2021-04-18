@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 420438546882866039}
   - component: {fileID: 5256677817026819339}
   - component: {fileID: 6095555807120445788}
-  m_Layer: 5
+  - component: {fileID: -8135314548081598491}
+  m_Layer: 11
   m_Name: oko
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95759ef43843f2349ac58d3d72331883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  niyari: {fileID: 0}
+  Buruburu: {fileID: 0}
+  kyun: {fileID: 0}
+  stamp: {fileID: 0}
+  oko: {fileID: 0}
+  generatePosition: {fileID: 0}
 --- !u!212 &6095555807120445788
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -159,6 +166,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8135314548081598491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276873592705200643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c11d01c7de7f0e46bcc54a80122e083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5651849067955531900
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +190,7 @@ GameObject:
   - component: {fileID: 6301637733692025596}
   - component: {fileID: 4614469141246275134}
   - component: {fileID: 7811134386031117811}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
