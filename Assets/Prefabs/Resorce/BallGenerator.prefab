@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2502544868689245284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2502544868689245282}
+  - component: {fileID: 2502544868689245285}
+  m_Layer: 0
+  m_Name: BallGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2502544868689245282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2502544868689245284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.26, y: 13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2502544868689245285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2502544868689245284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6aa0507b63ddf40a06069dc8a0b11f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ballPrefabs:
+  - {fileID: 8361958742212773456, guid: 85908a29caec9dd458a0011cf0ebf115, type: 3}
+  - {fileID: 5888484608648893711, guid: d03a40df87b447b4f8c826c146b74f82, type: 3}
+  - {fileID: 8368710364006366769, guid: 16843f954dcf8424d924334a67636450, type: 3}
+  m_clonePosA: {fileID: 0}
+  m_clonePosB: {fileID: 0}
+  m_interval: 0.5
+  m_firstMaxBallCount: 50
+  m_maxBallCount: 50
+  m_firstBallCountAtPool: 100

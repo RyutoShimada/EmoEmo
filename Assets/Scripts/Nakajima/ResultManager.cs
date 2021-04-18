@@ -13,5 +13,6 @@ public class ResultManager : MonoBehaviour
         m_totalChainText.text = $"合計チェイン数：{ScoreManager.totalChains}回";
         m_totalScoreText.text = $"合計スコア：{ScoreManager.totalScore}";
 
+
     }
 }

@@ -98,9 +98,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.00011968613}
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.4245515
 --- !u!50 &4008852552572312480
 Rigidbody2D:
   serializedVersion: 4
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pushPower: 1
-  m_selectBall: {fileID: 414718930624515456, guid: 9b8b9cb450d73424cad7b72dca6d9a43,
+  m_selectBall: {fileID: 2776918784330422574, guid: ebce20bab38cb1747a081cdf48de07a7,
     type: 3}
   m_selectClip: {fileID: 8300000, guid: f39d325d54a5edd45b82cdd5e95a6af2, type: 3}
   m_unSelectClip: {fileID: 8300000, guid: 3c8bcc5b737da644c824cd29073537de, type: 3}

@@ -60,7 +60,7 @@ public class Chaincontroller : MonoBehaviour
 
     void GetMouseButton()
     {
-        m_chainText.text = "CHAIN : " + m_ballList.Count.ToString();
+        if (m_chainText) m_chainText.text = "CHAIN : " + m_ballList.Count.ToString();
 
         if (Input.GetMouseButton(0))
         {

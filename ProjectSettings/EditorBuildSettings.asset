@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/NakajimaScene's/Title.unity
+    path: Assets/Scenes/MasterScenes/Title.unity
     guid: ee7454080378db3449602220f8d128d4
   - enabled: 1
-    path: Assets/Scenes/NakajimaScene's/NakajimaScene.unity
-    guid: c82d91bb76e8b4847a16d0c2b35ac062
+    path: Assets/Scenes/MasterScenes/GameScene.unity
+    guid: 8bdbe303c64e36a4e886ffba1a5624a0
   - enabled: 1
-    path: Assets/Scenes/NakajimaScene's/Result.unity
+    path: Assets/Scenes/MasterScenes/Result.unity
     guid: dd2bf7236813a0244912b463f832871c
   m_configObjects: {}
