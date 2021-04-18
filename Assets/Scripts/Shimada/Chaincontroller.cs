@@ -19,6 +19,8 @@ public class Chaincontroller : MonoBehaviour
     //チェイン処理
     /// <summary>消すために必要なチェイン数</summary>
     [SerializeField] int m_needChainCount = 3;
+    /// <summary>Goodなチェイン数</summary>
+    [SerializeField] int m_goodChainCount = 5;
     /// <summary>チェイン判定に余裕を持たせる割合</summary>
     [SerializeField] float m_margin = 0.07f;
     /// <summary>線の太さ</summary>
@@ -120,18 +122,26 @@ public class Chaincontroller : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             //チェイン数に応じて処理を変える
-            if (m_ballList.Count >= 3)
+            if (m_ballList.Count >= m_needChainCount)
             {
+                m_chainCount = m_ballList.Count;
+
                 foreach (var item in m_ballList)
                 {
                     item.gameObject.GetComponent<BallController2d>().UnSelectBall();
                     item.SetActive(false);
                 }
+
                 if (messagecontroller)
                 {
-                    messagecontroller.Generate(m_ballList[0]);
+                    messagecontroller.Generate(m_ballList[0], m_chainCount);
+                    //スタンプを出す処理
+                    if (m_chainCount >= m_goodChainCount)
+                    {
+                        messagecontroller.Stamp();
+                    }
                 }
-                m_chainCount = m_ballList.Count;
+
                 m_audio.Play();
                 scoreManager.AddChains(m_chainCount);
             }

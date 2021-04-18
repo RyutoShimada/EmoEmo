@@ -5,6 +5,7 @@ using UnityEngine;
 public class messagecontroller : MonoBehaviour
 {
     List<GameObject> tagObjects;
+    List<GameObject> tagObjectsStamp;
 
     [SerializeField] GameObject niyari;
 
@@ -23,56 +24,56 @@ public class messagecontroller : MonoBehaviour
 
     Chaincontroller m_chain;
 
-    
-
     [SerializeField] Transform generatePosition;
 
     int currentCount = 0;
+    int currentCountStamp = 0;
 
     void Start()
     {
         tagObjects = new List<GameObject>();
+        tagObjectsStamp = new List<GameObject>();
     }
 
-    public void Generate(GameObject message)
+    public void Generate(GameObject chainObj, int chainCount)
     {
         //GameObject messages = Instantiate(message, generatePosition, generatePosition);
         
 
-        if (niyari.gameObject.layer == message.gameObject.layer) 
+        if (niyari.gameObject.layer == chainObj.gameObject.layer) 
         {
-            Debug.Log("niyari");
             GameObject niyariObj =  Instantiate(niyari, generatePosition, generatePosition);
+            niyariObj.GetComponent<MessageText>().ChainText(chainCount);
             tagObjects.Add(niyariObj);
         }
-        else if (Buruburu.gameObject.layer == message.gameObject.layer)
+        else if (Buruburu.gameObject.layer == chainObj.gameObject.layer)
         {
-            Debug.Log("Buruburu");
             GameObject buruburuObj = Instantiate(Buruburu, generatePosition, generatePosition);
+            buruburuObj.GetComponent<MessageText>().ChainText(chainCount);
             tagObjects.Add(buruburuObj);
         }
-        else if (kyun.gameObject.layer == message.gameObject.layer)
+        else if (kyun.gameObject.layer == chainObj.gameObject.layer)
         {
-            Debug.Log("kyun");
             GameObject kyunObj = Instantiate(kyun, generatePosition, generatePosition);
+            kyunObj.GetComponent<MessageText>().ChainText(chainCount);
             tagObjects.Add(kyunObj);
         }
-        else if (upu.gameObject.layer == message.gameObject.layer)
+        else if (upu.gameObject.layer == chainObj.gameObject.layer)
         {
-            Debug.Log("upu");
             GameObject upuObj = Instantiate(upu, generatePosition, generatePosition);
+            upuObj.GetComponent<MessageText>().ChainText(chainCount);
             tagObjects.Add(upuObj);
         }
-        else if (oko.gameObject.layer == message.gameObject.layer)
+        else if (oko.gameObject.layer == chainObj.gameObject.layer)
         {
-            Debug.Log("oko");
             GameObject okoObj = Instantiate(oko, generatePosition, generatePosition);
+            okoObj.GetComponent<MessageText>().ChainText(chainCount);
             tagObjects.Add(okoObj);
         }
-        else if (pien.gameObject.layer == message.gameObject.layer)
+        else if (pien.gameObject.layer == chainObj.gameObject.layer)
         {
-            Debug.Log("pien");
             GameObject pienObj = Instantiate(pien, generatePosition, generatePosition);
+            pienObj.GetComponent<MessageText>().ChainText(chainCount);
             tagObjects.Add(pienObj);
         }
         
@@ -88,13 +89,13 @@ public class messagecontroller : MonoBehaviour
     public void Stamp()
     {
         GameObject gm = Instantiate(stamp, generatePosition, generatePosition);
-        tagObjects.Add(gm);
-        currentCount++;
+        tagObjectsStamp.Add(gm);
+        currentCountStamp++;
         if (currentCount > 4)
         {
-            currentCount--;
-            Destroy(tagObjects[0]);
-            tagObjects.RemoveAt(0);
+            currentCountStamp--;
+            Destroy(tagObjectsStamp[0]);
+            tagObjectsStamp.RemoveAt(0);
         }
     }
 }
