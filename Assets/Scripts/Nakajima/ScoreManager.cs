@@ -7,6 +7,11 @@ public class ScoreManager : MonoBehaviour
     public static int totalChains = 0;
     public static int totalScore = 0;
 
+    void Start()
+    {
+        totalChains = 0;
+        totalScore = 0;
+    }
 
     public void AddChains(int Chains)
     {
