@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8361958742212773460}
   - component: {fileID: 2523239821863589943}
   - component: {fileID: -4586061937480498082}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BuruBuruBall
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.00011968613}
   serializedVersion: 2
-  m_Radius: 0.4245515
+  m_Radius: 0.36
 --- !u!50 &8361958742212773460
 Rigidbody2D:
   serializedVersion: 4

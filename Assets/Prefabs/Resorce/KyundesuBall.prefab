@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8368710364006366773}
   - component: {fileID: -7617879709134241679}
   - component: {fileID: -2280487913726907171}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: KyundesuBall
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.00011968613}
   serializedVersion: 2
-  m_Radius: 0.4245515
+  m_Radius: 0.36
 --- !u!50 &8368710364006366773
 Rigidbody2D:
   serializedVersion: 4

@@ -12,10 +12,13 @@ public class messagecontroller : MonoBehaviour
 
     [SerializeField] GameObject kyun;
 
-    [SerializeField] GameObject stamp;
-
     [SerializeField] GameObject oko;
 
+    [SerializeField] GameObject upu;
+
+    [SerializeField] GameObject pien;
+
+    [SerializeField] GameObject stamp;
     //[SerializeField] GameObject message;
 
     Chaincontroller m_chain;
@@ -34,34 +37,45 @@ public class messagecontroller : MonoBehaviour
     public void Generate(GameObject message)
     {
         //GameObject messages = Instantiate(message, generatePosition, generatePosition);
-        tagObjects.Add(message);
+        
 
         if (niyari.gameObject.layer == message.gameObject.layer) 
         {
             Debug.Log("niyari");
-            Instantiate(oko, generatePosition, generatePosition);
+            GameObject niyariObj =  Instantiate(niyari, generatePosition, generatePosition);
+            tagObjects.Add(niyariObj);
         }
         else if (Buruburu.gameObject.layer == message.gameObject.layer)
         {
             Debug.Log("Buruburu");
-            Instantiate(Buruburu, generatePosition, generatePosition);
+            GameObject buruburuObj = Instantiate(Buruburu, generatePosition, generatePosition);
+            tagObjects.Add(buruburuObj);
         }
         else if (kyun.gameObject.layer == message.gameObject.layer)
         {
             Debug.Log("kyun");
-            Instantiate(kyun, generatePosition, generatePosition);
+            GameObject kyunObj = Instantiate(kyun, generatePosition, generatePosition);
+            tagObjects.Add(kyunObj);
         }
-        else if (stamp.gameObject.layer == message.gameObject.layer)
+        else if (upu.gameObject.layer == message.gameObject.layer)
         {
-            Debug.Log("stamp");
-            Instantiate(stamp, generatePosition, generatePosition);
+            Debug.Log("upu");
+            GameObject upuObj = Instantiate(upu, generatePosition, generatePosition);
+            tagObjects.Add(upuObj);
         }
         else if (oko.gameObject.layer == message.gameObject.layer)
         {
             Debug.Log("oko");
-            Instantiate(oko, generatePosition, generatePosition);
+            GameObject okoObj = Instantiate(oko, generatePosition, generatePosition);
+            tagObjects.Add(okoObj);
         }
-
+        else if (pien.gameObject.layer == message.gameObject.layer)
+        {
+            Debug.Log("pien");
+            GameObject pienObj = Instantiate(pien, generatePosition, generatePosition);
+            tagObjects.Add(pienObj);
+        }
+        
         currentCount++;
         if (currentCount > 4)
         {

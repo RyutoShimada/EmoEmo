@@ -125,6 +125,10 @@ public class Chaincontroller : MonoBehaviour
                     item.gameObject.GetComponent<BallController2d>().UnSelectBall();
                     item.SetActive(false);
                 }
+                if (messagecontroller)
+                {
+                    messagecontroller.Generate(m_ballList[0]);
+                }
                 m_chainCount = m_ballList.Count;
                 m_audio.Play();
             }
@@ -134,11 +138,6 @@ public class Chaincontroller : MonoBehaviour
                 {
                     item.gameObject.GetComponent<BallController2d>().UnSelectBall();
                 }
-            }
-
-            if (messagecontroller)
-            {
-                messagecontroller.Generate(m_ballList[0]);
             }
 
             m_ballList.Clear();
