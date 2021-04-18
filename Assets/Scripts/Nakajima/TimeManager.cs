@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
@@ -10,11 +11,14 @@ public class TimeManager : MonoBehaviour
     [SerializeField] GameObject m_timeupUI = null;
     [SerializeField] GameObject m_resultButton = null;
     [SerializeField] Animator m_anim;
+    float currentTime = 0;
     public static bool isPlayed = true;
     
 
     void Start()
     {
+        isPlayed = true;
+        currentTime = m_gameTime;
         m_timeupUI.SetActive(false);
         m_resultButton.SetActive(false);
     }
@@ -25,35 +29,35 @@ public class TimeManager : MonoBehaviour
 
         if (isPlayed)
         {
-            m_gameTime -= Time.deltaTime;
-            m_gameTimeUI.text = $"{m_gameTime:F0}";
+            currentTime -= Time.deltaTime;
+            m_gameTimeUI.text = $"{currentTime:F0}";
 
-            if (m_gameTime >= 10.5f)
+            if (currentTime >= 10.5f)
             {
                 m_anim.Play("GameTime");
             }
-            else if (m_gameTime < 10.5f && m_gameTime > 0)
+            else if (currentTime < 10.5f && currentTime > 0)
             {
                 m_anim.Play("BeforeTheEnd");
             }
-            else if (m_gameTime <= 0)
+            else if (currentTime <= 0)
             {
                 m_anim.Play("GameTime");
             }
 
-            if (m_gameTime <= 0)
+            if (currentTime <= 0)
             {
                 isPlayed = false;
                 m_timeupUI.SetActive(true);
-                StartCoroutine(DisplayButton());
+                StartCoroutine(LoadResult("Result"));
             }
         }
     }
 
-    IEnumerator DisplayButton()
+    IEnumerator LoadResult(string name)
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3.0f);
 
-        m_resultButton.SetActive(true);
+        SceneManager.LoadScene(name);
     }
 }

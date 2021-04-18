@@ -39,8 +39,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 109.600006, y: -4.299988}
+  m_SizeDelta: {x: 96.63797, y: 91.31448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2255128247439512118
 CanvasRenderer:
@@ -113,8 +113,10 @@ MonoBehaviour:
   niyari: {fileID: 0}
   Buruburu: {fileID: 0}
   kyun: {fileID: 0}
-  stamp: {fileID: 0}
   oko: {fileID: 0}
+  upu: {fileID: 0}
+  pien: {fileID: 0}
+  stamp: {fileID: 0}
   generatePosition: {fileID: 0}
 --- !u!212 &9076204848004548389
 SpriteRenderer:
@@ -196,7 +198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8281749352438373599
 RectTransform:
   m_ObjectHideFlags: 0
