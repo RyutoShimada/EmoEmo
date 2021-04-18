@@ -138,8 +138,7 @@ public class Chaincontroller : MonoBehaviour
 
             if (messagecontroller)
             {
-                messagecontroller.Generate();
-                //messagecontroller.Generate(m_ballList[0]);
+                messagecontroller.Generate(m_ballList[0]);
             }
 
             m_ballList.Clear();
