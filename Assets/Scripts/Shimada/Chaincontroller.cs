@@ -34,10 +34,10 @@ public class Chaincontroller : MonoBehaviour
 
     [SerializeField] ScoreManager scoreManager;
 
-    #if UNITY_EDITOR
-    /// <summary>デバッグ用のチェインテキスト</summary>
-    [SerializeField] Text m_chainText = null;
-    #endif
+    //#if UNITY_EDITOR
+    ///// <summary>デバッグ用のチェインテキスト</summary>
+    //[SerializeField] Text m_chainText = null;
+    //#endif
 
     // Start is called before the first frame update
     void Start()
@@ -62,7 +62,7 @@ public class Chaincontroller : MonoBehaviour
 
     void GetMouseButton()
     {
-        if (m_chainText) m_chainText.text = "CHAIN : " + m_ballList.Count.ToString();
+        //if (m_chainText) m_chainText.text = "CHAIN : " + m_ballList.Count.ToString();
 
         if (Input.GetMouseButton(0))
         {
