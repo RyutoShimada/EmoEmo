@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1169714097766754371}
   - component: {fileID: 522876996325354625}
   - component: {fileID: 3111701130622994252}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,8 @@ GameObject:
   - component: {fileID: 4800256963988154824}
   - component: {fileID: 1133564019412662196}
   - component: {fileID: 1432005396288345059}
-  m_Layer: 5
+  - component: {fileID: 8414873687619918448}
+  m_Layer: 13
   m_Name: upu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,6 +204,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95759ef43843f2349ac58d3d72331883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  niyari: {fileID: 0}
+  Buruburu: {fileID: 0}
+  kyun: {fileID: 0}
+  stamp: {fileID: 0}
+  oko: {fileID: 0}
+  generatePosition: {fileID: 0}
 --- !u!212 &1432005396288345059
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -253,3 +260,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8414873687619918448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264541319701164220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c11d01c7de7f0e46bcc54a80122e083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

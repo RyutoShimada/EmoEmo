@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5888484608648893710}
   - component: {fileID: 5888484608648893707}
   - component: {fileID: -346596365983620038}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: UpuBall
   m_TagString: Ball
   m_Icon: {fileID: 0}

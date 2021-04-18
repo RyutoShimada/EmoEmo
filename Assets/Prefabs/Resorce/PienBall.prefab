@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 14473089329733215}
   - component: {fileID: 14473089329733210}
   - component: {fileID: 3079290951068856171}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PienBall
   m_TagString: Ball
   m_Icon: {fileID: 0}

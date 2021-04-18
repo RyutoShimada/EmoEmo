@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3638862781312737392}
   - component: {fileID: 9176396868900601356}
   - component: {fileID: 7151055947398863451}
-  m_Layer: 5
+  - component: {fileID: 8769647498934116486}
+  m_Layer: 12
   m_Name: pien
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95759ef43843f2349ac58d3d72331883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  niyari: {fileID: 0}
+  Buruburu: {fileID: 0}
+  kyun: {fileID: 0}
+  stamp: {fileID: 0}
+  oko: {fileID: 0}
+  generatePosition: {fileID: 0}
 --- !u!212 &7151055947398863451
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -159,6 +166,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8769647498934116486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743317857497102596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c11d01c7de7f0e46bcc54a80122e083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8774421659395308411
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +190,7 @@ GameObject:
   - component: {fileID: 6978766239396372987}
   - component: {fileID: 8620883605312300345}
   - component: {fileID: 6614905615630585588}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8091289607823165427}
   - component: {fileID: 8091289607823165430}
   - component: {fileID: 6539988603183412935}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NiyariBall
   m_TagString: Ball
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8361958742212773457}
   - component: {fileID: 8361958742212773460}
   - component: {fileID: 2523239821863589943}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BuruBuruBall
   m_TagString: Ball
   m_Icon: {fileID: 0}

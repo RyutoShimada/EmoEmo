@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4570416813931462605}
   - component: {fileID: 2888893123173169935}
   - component: {fileID: 322063001002381506}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,8 +108,9 @@ GameObject:
   - component: {fileID: 7911480256679640646}
   - component: {fileID: 2372820166040707130}
   - component: {fileID: 4362097381060740205}
-  m_Layer: 5
-  m_Name: niyari (1)
+  - component: {fileID: 7074882604160074891}
+  m_Layer: 10
+  m_Name: niyari
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,6 +204,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95759ef43843f2349ac58d3d72331883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  niyari: {fileID: 0}
+  Buruburu: {fileID: 0}
+  kyun: {fileID: 0}
+  stamp: {fileID: 0}
+  oko: {fileID: 0}
+  generatePosition: {fileID: 0}
 --- !u!212 &4362097381060740205
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -253,3 +260,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7074882604160074891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765929043338422066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c11d01c7de7f0e46bcc54a80122e083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

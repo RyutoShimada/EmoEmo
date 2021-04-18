@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4008852552572312485}
   - component: {fileID: 4008852552572312480}
   - component: {fileID: 2101760271037508241}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OkoBall
   m_TagString: Ball
   m_Icon: {fileID: 0}
