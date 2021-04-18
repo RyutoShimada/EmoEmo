@@ -279,6 +279,11 @@ PrefabInstance:
       propertyPath: m_lineWidth
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 3386567427996498919, guid: e898da8b70a9bda4d86bfac9cde433f3,
+        type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 1712525117}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e898da8b70a9bda4d86bfac9cde433f3, type: 3}
 --- !u!1001 &442018236
@@ -628,12 +633,12 @@ PrefabInstance:
     - target: {fileID: 8797626715312342995, guid: ef6ee43cc7d19ed4fa93558854c5d147,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 438
+      value: 818
       objectReference: {fileID: 0}
     - target: {fileID: 8797626715312342995, guid: ef6ee43cc7d19ed4fa93558854c5d147,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -427
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 8797626715338733522, guid: ef6ee43cc7d19ed4fa93558854c5d147,
         type: 3}
